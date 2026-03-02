@@ -82,6 +82,14 @@ DATABASES = {
         'CLIENT': {
             'host': 'mongodb://localhost:27017/octofit_db',
         },
+    },
+    'analytics': {
+        'ENGINE': 'djongo',
+        'NAME': 'analytics_db',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017/analytics_db',
+        },
     }
 }
 # CORS settings
