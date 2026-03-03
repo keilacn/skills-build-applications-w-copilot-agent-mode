@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Spinner, Alert, Card, Table } from 'react-bootstrap';
 
 function Workouts() {
   const [workouts, setWorkouts] = useState([]);
@@ -51,8 +51,8 @@ function Workouts() {
 
   if (loading) {
     return (
-      <Container className="mt-5 text-center">
-        <Spinner animation="border" role="status">
+      <Container className="mt-5 mb-5 text-center">
+        <Spinner animation="border" role="status" variant="primary">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       </Container>
@@ -60,38 +60,44 @@ function Workouts() {
   }
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 mb-5">
       <Row>
-        <Col>
-          <h1>Workouts</h1>
-          <p className="text-muted">API Endpoint: {apiEndpoint}</p>
-          {error && <Alert variant="danger">Error: {error}</Alert>}
-          {workouts.length === 0 ? (
-            <Alert variant="info">No workouts found</Alert>
-          ) : (
-            <div className="table-responsive">
-              <table className="table table-striped">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {workouts.map((workout) => (
-                    <tr key={workout.id}>
-                      <td>{workout.id}</td>
-                      <td>{workout.name || 'N/A'}</td>
-                      <td>{workout.type || 'N/A'}</td>
-                      <td>{workout.description || 'N/A'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
+        <Col lg={10} className="mx-auto">
+          <Card className="shadow-lg">
+            <Card.Header className="bg-info text-white">
+              <Card.Title className="mb-0">💪 Workouts</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p className="text-muted small">API Endpoint: {apiEndpoint}</p>
+              {error && <Alert variant="danger" className="mb-3">Error: {error}</Alert>}
+              {workouts.length === 0 ? (
+                <Alert variant="info" className="mb-0">No workouts found</Alert>
+              ) : (
+                <div className="table-responsive">
+                  <Table striped bordered hover className="mb-0">
+                    <thead className="table-light">
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {workouts.map((workout) => (
+                        <tr key={workout.id}>
+                          <td>{workout.id}</td>
+                          <td>{workout.name || 'N/A'}</td>
+                          <td>{workout.type || 'N/A'}</td>
+                          <td>{workout.description || 'N/A'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </div>
+              )}
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
