@@ -35,9 +35,15 @@ function Home() {
 function App() {
   return (
     <Router>
-      <Navbar bg="dark" expand="lg" sticky="top" className="mb-4">
+      <Navbar bg="dark" expand="lg" sticky="top" className="mb-4 navbar-custom">
         <Container>
-          <Navbar.Brand as={Link} to="/" className="fw-bold">
+          <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">
+            <img
+              src="/octofit-logo.svg"
+              alt="OctoFit Logo"
+              height="40"
+              className="me-3"
+            />
             🐙 OctoFit Tracker
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
