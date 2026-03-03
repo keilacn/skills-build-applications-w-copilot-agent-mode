@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Octopus body -->
+  <circle cx="100" cy="80" r="50" fill="#007bff" stroke="#0056b3" stroke-width="2"/>
+  
+  <!-- Left eye -->
+  <circle cx="85" cy="70" r="8" fill="white"/>
+  <circle cx="85" cy="70" r="5" fill="black"/>
+  
+  <!-- Right eye -->
+  <circle cx="115" cy="70" r="8" fill="white"/>
+  <circle cx="115" cy="70" r="5" fill="black"/>
+  
+  <!-- Smile -->
+  <path d="M 85 90 Q 100 100 115 90" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 1 -->
+  <path d="M 70 120 Q 50 150 55 180" stroke="#28a745" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 2 -->
+  <path d="M 85 130 Q 75 165 80 190" stroke="#28a745" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 3 -->
+  <path d="M 100 135 Q 100 170 100 195" stroke="#28a745" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 4 -->
+  <path d="M 115 130 Q 125 165 120 190" stroke="#28a745" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacle 5 -->
+  <path d="M 130 120 Q 150 150 145 180" stroke="#28a745" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Fitness indicator - dumbbell -->
+  <line x1="140" y1="30" x2="160" y2="30" stroke="#ffc107" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="135" cy="30" r="6" fill="#ffc107"/>
+  <circle cx="165" cy="30" r="6" fill="#ffc107"/>
+</svg>
