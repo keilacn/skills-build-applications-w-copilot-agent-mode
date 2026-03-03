@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,15 @@ SECRET_KEY = 'django-insecure-qu5ypa%0d$2f^r**z##b1d+p6%%1236ocbqhq-toj-o16%$v(a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Get CODESPACE_NAME from environment variable for GitHub Codespaces support
+CODESPACE_NAME = os.getenv('CODESPACE_NAME', 'localhost')
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    f'{CODESPACE_NAME}-8000.app.github.dev',
+    '*.app.github.dev',
+]
 
 
 # Application definition
@@ -93,6 +102,7 @@ DATABASES = {
     }
 }
 # CORS settings
+# CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
@@ -107,6 +117,10 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 ALLOWED_HOSTS = ['*']
+
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
